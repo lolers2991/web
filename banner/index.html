@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --Can-Image: url('Aqua Melon Closed.png');
+      --Bar-Image: url('Spring Bar Closed.png');
+    }
+
+    #CanGif {
+      content: var(--Can-Image);
+    }
+
+    #BarGif {
+      content: var(--Bar-Image);
+    }
+
+    .ImgContainer {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+      background-color: lightgray;
+      border-color: black;
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 5px;
+    }
+
+    .ContainerItem {
+      align-self: center;
+      justify-self: center;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      background-color: white;
+      border-color: black;
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 5px;
+    }
+
+    .ContainerContainer {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+    }
+
+    .text {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      background-color: gray;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="ImgContainer">
+    <img class="ContainerItem" src="better banner.gif">
+    <div class="ContainerContainer">
+      <p class="text">Aqua Melon</p>
+      <p class="text">Spring Bar</p>
+    </div>
+    <div class="ContainerContainer">
+      <img class="ContainerItem" id="CanGif">
+      <img class="ContainerItem" id="BarGif">
+    </div>
+    <div class="ContainerContainer">
+      <ul class="text">
+        <p class="text">Nutrition</p>
+        <li>Calories: 50 kcal</li>
+        <li>Fer: 0g</li>
+        <li>Lipides: 0g</li>
+        <li>Proteines: 0g</li>
+        <li>Sodium: 100-200mg</li>
+        <li>Sucres: 12g</li>
+        <li>Potassium: 150mg</li>
+      </ul>
+      <ul class="text">
+        <p class="text">Nutrition</p>
+        <li>Calories: 4</li>
+        <li>Fer: 400g</li>
+        <li>Lipides: 0g</li>
+        <li>Proteines: 0g</li>
+        <li>Sodium: 0mg</li>
+        <li>Sucres: 0g</li>
+        <li>Potassium: 0mg</li>
+      </ul>
+    </div>
+    <div class="ContainerContainer">
+      <a class="text" href="https://www.figma.com/proto/pe2aFkqYNjbjtkslvu0rkr/Exemple-Promo?node-id=242-6&t=rdNr2YogWFtOO7tk-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=242%3A6&show-proto-sidebar=1">
+        Acheter
+      </a>
+      <a class="text" href="https://www.figma.com/proto/pe2aFkqYNjbjtkslvu0rkr/Exemple-Promo?node-id=881-127&t=hU7ScaPcdkNjQzj3-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=881%3A105&show-proto-sidebar=1">
+        Acheter
+      </a>
+    </div>
+  </div>
+  <script>
+    const can = document.getElementById("CanGif");
+    let hoverTimeoutCan;
+
+    can.addEventListener("mouseover", () => {
+      document.documentElement.style.setProperty("--Can-Image", "url('Aqua Melon.gif')");
+      hoverTimeoutCan = setTimeout(() => {
+        document.documentElement.style.setProperty("--Can-Image", "url('Aqua Melon Open.png')");
+      }, 300);
+    });
+
+    can.addEventListener("mouseout", () => {
+      clearTimeout(hoverTimeoutCan);
+      document.documentElement.style.setProperty("--Can-Image", "url('Aqua Melon Closed.png')");
+    });
+
+    const bar = document.getElementById("BarGif");
+    let hoverTimeoutBar;
+
+    bar.addEventListener("mouseover", () => {
+      document.documentElement.style.setProperty("--Bar-Image", "url('Spring Bar.gif')");
+      hoverTimeoutBar = setTimeout(() => {
+        document.documentElement.style.setProperty("--Bar-Image", "url('Spring Bar Open.png')");
+      }, 300);
+    });
+
+    bar.addEventListener("mouseout", () => {
+      clearTimeout(hoverTimeoutBar);
+      document.documentElement.style.setProperty("--Bar-Image", "url('Spring Bar Closed.png')");
+    });
+  </script>
+</body>
+</html>
